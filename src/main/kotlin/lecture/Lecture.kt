@@ -12,5 +12,6 @@ object Lecture {
         val byFour: `1-4 서스펜딩 함수` get() = `1-4 서스펜딩 함수`
         val byFive: `1-5 코루틴 디스패처` get() = `1-5 코루틴 디스패처`
         val bySix: `1-6 CEH와 슈퍼바이저 잡` get() = `1-6 CEH와 슈퍼바이저 잡`
+        val bySeven: `1-7 공유 객체, Mutex, Actor` get() = `1-7 공유 객체, Mutex, Actor`
     }
 }
