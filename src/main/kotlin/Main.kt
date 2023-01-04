@@ -1,3 +1,5 @@
+import lecture.Lecture
+
 fun main(args: Array<String>) {
-    println("Hello World!")
+    Lecture.Chapter1.bySix.example38()
 }
