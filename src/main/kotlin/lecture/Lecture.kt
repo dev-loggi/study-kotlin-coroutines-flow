@@ -113,5 +113,13 @@ object Lecture {
             val example60: Example get() = Example60
             val example61: Example get() = Example61
         }
+
+        /** 2-4 플로우 버퍼링 */
+        object ByFour {
+            val example62: Example get() = Example62
+            val example63: Example get() = Example63
+            val example64: Example get() = Example64
+            val example65: Example get() = Example65
+        }
     }
 }
