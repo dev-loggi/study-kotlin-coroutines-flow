@@ -89,6 +89,8 @@ object Lecture {
         object ByOne {
             val example45: Example get() = Example45
             val example46: Example get() = Example46
+            val example47: Example get() = Example47
+            val example48: Example get() = Example48
         }
 
     }

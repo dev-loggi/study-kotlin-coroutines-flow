@@ -7,8 +7,7 @@
 package lecture.chapter2
 
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withTimeoutOrNull
 import lecture.Example
@@ -67,6 +66,40 @@ object Example46 : Example {
         repeat(10) {
             emit(Random.nextInt(0, 500)) // 방출
             delay(100L)
+        }
+    }
+}
+
+/**
+ * 예제 47: 플로우 빌더 flowOf()
+ *
+ * flow() 이외에도 flowOf(), asFlow() 등의 몇가지 플로우 빌더가 있다.
+ * 먼저 flowOf() 를 살펴보자.
+ *
+ * flowOf() 는 여러 값을 인자로 전달해 플로우를 만든다.
+ * */
+object Example47 : Example {
+
+    override fun run() = runBlocking {
+        flowOf(1, 2, 3, 4, 5).collect { value ->
+            println(value)
+        }
+    }
+}
+
+/**
+ * 예제 49: 플로우 빌더 asFlow()
+ *
+ * asFlow() 는 컬렉션이나 시퀀스를 전달해 플로우를 만들 수 있다.
+ * */
+object Example48 : Example {
+
+    override fun run() = runBlocking {
+        listOf(1, 2, 3, 4, 5).asFlow().collect { value ->
+            println(value)
+        }
+        (6..10).asFlow().collect {
+            println(it)
         }
     }
 }
