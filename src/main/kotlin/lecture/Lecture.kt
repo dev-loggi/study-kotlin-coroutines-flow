@@ -106,6 +106,12 @@ object Lecture {
             val example57: Example get() = Example57
             val example58: Example get() = Example58
         }
-    }
 
+        /** 2-3 플로우 컨텍스트 */
+        object ByThree {
+            val example59: Example get() = Example59
+            val example60: Example get() = Example60
+            val example61: Example get() = Example61
+        }
+    }
 }
