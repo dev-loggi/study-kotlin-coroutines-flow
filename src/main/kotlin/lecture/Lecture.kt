@@ -134,5 +134,13 @@ object Lecture {
             val example69: Example get() = Example69
             val example70: Example get() = Example60
         }
+
+        /** 2-7 플로우 예외처리하기 */
+        object BySeven {
+            val example71: Example get() = Example71
+            val example72: Example get() = Example72
+            val example73: Example get() = Example73
+            val example74: Example get() = Example74
+        }
     }
 }
