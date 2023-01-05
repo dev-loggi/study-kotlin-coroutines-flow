@@ -1,16 +1,23 @@
+/*
+* [Chapter 1] 코루틴과 동시성 프로그래밍
+*
+* [1-2] Job. 구조화된 동시성
+* */
+
 package lecture.chapter1
 
 import kotlinx.coroutines.*
+import lecture.Example
 
-object `1-2 Job, 구조화된 동시성` {
+/**
+ * 예제 10: suspend 함수에서 코루틴 빌더 호출
+ *
+ * runBlocking() 외의 코루틴 빌더,
+ * 즉 launch() 함수는 코루틴 스코프 내에서 호출이 가능하다.
+ * */
+object Example10 : Example {
 
-    /**
-     * 예제 10: suspend 함수에서 코루틴 빌더 호출
-     *
-     * runBlocking() 외의 코루틴 빌더,
-     * 즉 launch() 함수는 코루틴 스코프 내에서 호출이 가능하다.
-     * */
-    fun example10() = runBlocking {
+    override fun run() = runBlocking {
         doOneTwoThree() // suspension point
         println("runBlocking: ${Thread.currentThread().name}")
         delay(100L) // suspension point
@@ -37,24 +44,27 @@ object `1-2 Job, 구조화된 동시성` {
         */
         println("4!")
     }
+}
 
-    /**
-     * 예제 11: 코루틴 스코프(Coroutine Scope)
-     *
-     * 코루틴 스코프를 만드는 다른 방법은 [스코프 빌더]를 이용한 것이다.
-     * 위 예제 10 코드를 동작하게 만들어 봅시다.
-     *
-     * withContext(), runBlocking() 은 현재 스레드를 멈추게 만들지만,
-     * coroutineScope() 은 스레드를 멈추지 않고, 호출한 쪽이 suspend 되고 시간이 되면 다시 활동한다.
-     * */
-    fun example11() = runBlocking {
-        doOneTwoThree2()
+/**
+ * 예제 11: 코루틴 스코프(Coroutine Scope)
+ *
+ * 코루틴 스코프를 만드는 다른 방법은 [스코프 빌더]를 이용한 것이다.
+ * 위 예제 10 코드를 동작하게 만들어 봅시다.
+ *
+ * withContext(), runBlocking() 은 현재 스레드를 멈추게 만들지만,
+ * coroutineScope() 은 스레드를 멈추지 않고, 호출한 쪽이 suspend 되고 시간이 되면 다시 활동한다.
+ * */
+object Example11 : Example {
+
+    override fun run() = runBlocking {
+        doOneTwoThree()
         println("runBlocking: ${Thread.currentThread().name}")
         delay(100L)
         println("5!")
     }
 
-    private suspend fun doOneTwoThree2() = coroutineScope {
+    private suspend fun doOneTwoThree() = coroutineScope {
         launch {
             println("launch1: ${Thread.currentThread().name}")
             delay(1000L)
@@ -71,22 +81,25 @@ object `1-2 Job, 구조화된 동시성` {
         }
         println("4!")
     }
+}
 
-    /**
-     * 예제 12: Job 을 이용한 제어
-     *
-     * 코루틴 빌더 launch()는 Job 객체를 반환하며,
-     * 이를 통해 종료될 때까지 기다릴 수 있다.
-     *
-     * Job.join(): Suspends the coroutine until this job is complete.
-     * */
-    fun example12() = runBlocking {
-        doOneTwoThree3()
+/**
+ * 예제 12: Job 을 이용한 제어
+ *
+ * 코루틴 빌더 launch()는 Job 객체를 반환하며,
+ * 이를 통해 종료될 때까지 기다릴 수 있다.
+ *
+ * Job.join(): Suspends the coroutine until this job is complete.
+ * */
+object Example12 : Example {
+
+    override fun run() = runBlocking {
+        doOneTwoThree()
         println("runBlocking: ${Thread.currentThread().name}")
         println("5!")
     }
 
-    private suspend fun doOneTwoThree3() = coroutineScope {
+    private suspend fun doOneTwoThree() = coroutineScope {
         val job = launch {
             println("launch1: ${Thread.currentThread().name}")
             delay(1000L)
@@ -105,14 +118,17 @@ object `1-2 Job, 구조화된 동시성` {
         }
         println("4!")
     }
+}
 
-    /**
-     * 예제 13: 가벼운 코루틴
-     *
-     * 코루틴은 협력적으로 동작하기 때문에 코루틴을 만드는 것이 큰 비용이 들지 않는다.
-     * 10만개의 간단한 일을 하는 코루틴도 큰 부담이 아니다.
-     * */
-    fun example13() = runBlocking {
+/**
+ * 예제 13: 가벼운 코루틴
+ *
+ * 코루틴은 협력적으로 동작하기 때문에 코루틴을 만드는 것이 큰 비용이 들지 않는다.
+ * 10만개의 간단한 일을 하는 코루틴도 큰 부담이 아니다.
+ * */
+object Example13 : Example {
+
+    override fun run() = runBlocking {
         makeManyCoroutines()
         println("runBlocking: ${Thread.currentThread().name}")
         println("3!")
