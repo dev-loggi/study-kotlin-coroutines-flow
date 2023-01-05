@@ -149,5 +149,12 @@ object Lecture {
             val example76: Example get() = Example76
             val example77: Example get() = Example77
         }
+
+        /** 2-9 플로우 런칭 */
+        object ByNine {
+            val example78: Example get() = Example78
+            val example79: Example get() = Example79
+        }
     }
+
 }
