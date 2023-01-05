@@ -2,6 +2,7 @@ package lecture
 
 import lecture.chapter1.*
 import lecture.chapter2.*
+import lecture.chapter3.*
 
 /** Kotlin Coroutines & Flow */
 object Lecture {
@@ -157,4 +158,15 @@ object Lecture {
         }
     }
 
+    /** 3부. 코틀린 채널 */
+    object Chapter3 {
+
+        /** 3-1 채널 기초 */
+        object ByOne {
+            val example80: Example get() = Example80
+            val example81: Example get() = Example81
+            val example82: Example get() = Example82
+            val example83: Example get() = Example83
+        }
+    }
 }
