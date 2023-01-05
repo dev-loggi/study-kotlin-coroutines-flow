@@ -121,5 +121,11 @@ object Lecture {
             val example64: Example get() = Example64
             val example65: Example get() = Example65
         }
+
+        /** 2-5 플로우 결합하기 */
+        object ByFive {
+            val example66: Example get() = Example66
+            val example67: Example get() = Example67
+        }
     }
 }
