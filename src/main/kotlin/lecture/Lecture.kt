@@ -142,5 +142,12 @@ object Lecture {
             val example73: Example get() = Example73
             val example74: Example get() = Example74
         }
+
+        /** 2-8 플로우 완료처리하기 */
+        object ByEight {
+            val example75: Example get() = Example75
+            val example76: Example get() = Example76
+            val example77: Example get() = Example77
+        }
     }
 }
