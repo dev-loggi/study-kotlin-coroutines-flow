@@ -93,6 +93,19 @@ object Lecture {
             val example48: Example get() = Example48
         }
 
+        /** 2-2 플로우 연산 */
+        object ByTwo {
+            val example49: Example get() = Example49
+            val example50: Example get() = Example50
+            val example51: Example get() = Example51
+            val example52: Example get() = Example52
+            val example53: Example get() = Example53
+            val example54: Example get() = Example54
+            val example55: Example get() = Example55
+            val example56: Example get() = Example56
+            val example57: Example get() = Example57
+            val example58: Example get() = Example58
+        }
     }
 
 }
