@@ -127,5 +127,12 @@ object Lecture {
             val example66: Example get() = Example66
             val example67: Example get() = Example67
         }
+        
+        /** 2-6 플로우 플래트닝하기 */
+        object BySix {
+            val example68: Example get() = Example68
+            val example69: Example get() = Example69
+            val example70: Example get() = Example60
+        }
     }
 }
