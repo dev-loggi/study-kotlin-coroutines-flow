@@ -183,5 +183,12 @@ object Lecture {
             val example89: Example get() = Example89
             val example90: Example get() = Example90
         }
+
+        /** 3-4 채널 버퍼링 */
+        object ByFour {
+            val example91: Example get() = Example91
+            val example92: Example get() = Example92
+            val example93: Example get() = Example93
+        }
     }
 }
