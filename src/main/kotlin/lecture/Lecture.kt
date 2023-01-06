@@ -168,5 +168,12 @@ object Lecture {
             val example82: Example get() = Example82
             val example83: Example get() = Example83
         }
+
+        /** 3-2 채널 파이프라인 */
+        object ByTwo {
+            val example84: Example get() = Example84
+            val example85: Example get() = Example85
+            val example86: Example get() = Example86
+        }
     }
 }
