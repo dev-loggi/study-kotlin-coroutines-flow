@@ -175,5 +175,13 @@ object Lecture {
             val example85: Example get() = Example85
             val example86: Example get() = Example86
         }
+
+        /** 3-3 채널 팬아웃, 팬인 */
+        object ByThree {
+            val example87: Example get() = Example87
+            val example88: Example get() = Example88
+            val example89: Example get() = Example89
+            val example90: Example get() = Example90
+        }
     }
 }
